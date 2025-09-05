@@ -110,7 +110,7 @@ export default function ImageResizer() {
         setResult(null);
 
         try {
-            const res = await fetch(`${import.meta.env.API_URL}/upload`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
                 method: "POST",
                 body: formData,
             });
