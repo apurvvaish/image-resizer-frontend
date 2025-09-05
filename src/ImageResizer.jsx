@@ -110,13 +110,10 @@ export default function ImageResizer() {
         setResult(null);
 
         try {
-            const res = await fetch(
-                "https://image-resizer-fedn.onrender.com/upload",
-                {
-                    method: "POST",
-                    body: formData,
-                }
-            );
+            const res = await fetch(`${import.meta.env.API_URL}/upload`, {
+                method: "POST",
+                body: formData,
+            });
 
             if (!res.ok) {
                 const errorText = await res.text();
